@@ -1,11 +1,12 @@
+// Test import of styles
+import '@/styles/main.scss'
+/*
 // Test import of a JavaScript module
 import { example } from '@/js/example'
 
 // Test import of an asset
 import webpackLogo from '@/images/webpack-logo.svg'
 
-// Test import of styles
-import '@/styles/index.scss'
 
 // Appending to the DOM
 const logo = document.createElement('img')
@@ -24,3 +25,4 @@ imagePublic.src = '/assets/example.png'
 
 const app = document.querySelector('#root')
 app.append(logo, heading, imageBackground, imagePublic)
+*/

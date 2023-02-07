@@ -9,6 +9,84 @@
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="content-container">
+        <!-- Site Header -->
+        <header class="site-header s-hdr">
+          <div class="s-hdr__logo-wrp u-flex-center">
+            <img class="s-hdr__logo" src="./freyja-logo.svg" alt="Freyja's Work Logo" />
+          </div>
+
+          <!-- Nav links -->
+          <nav class="s-hdr__nav">
+            <ul class="s-hdr__nav-list">
+              <li>
+                <a href="/product" class="s-hdr__nav-link">
+                  <span class="nav-link__text"> Product </span>
+                </a>
+              </li>
+              <li>
+                <a href="/product" class="s-hdr__nav-link">
+                  <span class="nav-link__text"> Fashion </span>
+                </a>
+              </li>
+              <li>
+                <a href="/product" class="s-hdr__nav-link">
+                  <span class="nav-link__icon"> </span>
+                  <span class="nav-link__text"> Music </span>
+                </a>
+              </li>
+              <li>
+                <a href="/product" class="s-hdr__nav-link">
+                  <span class="nav-link__icon"> </span>
+                  <span class="nav-link__text"> Tweets </span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <!-- Language switch -->
+          <div
+            class="s-hdr__language-switch lg-switch"
+            role="radiogroup"
+            aria-labelledby="#hdr-lang-switch"
+          >
+            <p class="visually-hidden" id="#hdr-lang-switch">Choose a language for this website</p>
+            <div class="lg-switch-option">
+              <label for="hdr-lang-en">English</label>
+              <input type="radio" name="hdr-site-language" id="hdr-lang-en" value="en" checked />
+            </div>
+            <div class="lg-switch-option">
+              <label for="hdr-lang-is">Icelandic</label>
+              <input type="radio" name="hdr-site-language" id="hdr-lang-is" value="is" />
+            </div>
+          </div>
+
+          <!-- Builders' reference -->
+          <p class="s-hdr__credit">Love from itxbo</p>
+        </header>
+
+        <!-- Site Main -->
+        <main class="site-main s-main">
+          <h1 class="main-heading">
+            <span>Freyja</span>
+            <span>Stefánson</span>
+          </h1>
+          <div><p>Multidisciplinary Creative</p></div>
+
+          <div>
+            <p>Freyja Stefánsson is an Icelandic Designer and indie pop artiste.</p>
+            <p>
+              As a multidisciplinary designer, Freyja has worked in Product Design across Financial
+              Technology and Artificial Intelligence Applications. In Fashion and Graphic Art
+              Direction with Zara, OFF-WHITE, etc
+            </p>
+            <p>Award Nominee at the Icelandic Music Awards for Best Newcomer, but that's just one of her various hobbies.</p>
+          </div>
+
+          <button>Let's Chat?</button>
+        </main>
+      </div>
+    </div>
   </body>
 </html>

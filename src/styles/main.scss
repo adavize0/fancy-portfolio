@@ -1,0 +1,36 @@
+@import "./base/reset";
+@import "./base/typography";
+@import "./utilities/flex";
+@import "./base/accessibility";
+
+body {
+  font-family: "Matter SQ", Arial, Helvetica, sans-serif;
+}
+
+#root {
+  max-width: 1366px;
+  margin: auto;
+}
+
+.content-container {
+  background-color: red;
+  width: 100%;
+  min-height: 100vh;
+
+  display: grid;
+  grid-template-columns: 330px 1fr;
+  align-content: stretch;
+}
+
+.s-hdr {
+  background-color: blue;
+}
+
+.s-hdr__logo-wrp {
+  background-color: green;
+  min-height: 128px;
+}
+
+.s-hdr__logo {
+  max-width: 92px;
+}
