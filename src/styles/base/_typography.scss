@@ -17,13 +17,28 @@
     font-style: normal;
 }
 
+
+@font-face {
+    font-family: "Angelin";
+    src: url("../fonts/Angelin.ttf") format("truetype"),
+        url("../fonts/Angelin.woff") format("woff"),
+        url("../fonts/Angelin.woff2") format("woff2");
+
+    font-weight: normal;
+    font-style: normal;
+}
+
 // font family - Heading like
 .ffam-h {
-    font-family: "Monument Extended";
+    font-family: "Monument Extended", Arial, Helvetica, sans-serif;
 }
 
 .ffam-t {
-    font-family: "Matter SQ";
+    font-family: "Matter SQ", Arial, Helvetica, sans-serif;
+}
+
+.ffam-style {
+    font-family: "Angelin", sans-serif;
 }
 
 :root {

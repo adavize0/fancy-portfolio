@@ -7,25 +7,31 @@ body {
   font-family: "Matter SQ", Arial, Helvetica, sans-serif;
   background-color: #021711;
   color: white;
+  height: 100%;
 }
 
 #root {
-  // max-width: 1366px;
-  margin: auto;
+  margin: auto; 
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .root__inner {
   position: relative;
-  width: 100%;
-  min-height: 100vh;
-
+  height: 100vh;
+  max-height: 1000px;
+  width: fit-content;
   display: grid;
-  grid-template-columns: 330px 1fr;
-  align-content: stretch;
+  grid-template-columns: minmax(350px,25vw) 1fr;
 }
 
 .s-hdr {
+  flex-grow: 0.45;
+  flex-shrink: -1;
   text-align: center;
+
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: min-content min-content auto;
@@ -33,6 +39,7 @@ body {
 
 .s-hdr__logo-wrp {
   min-height: 157px;
+  min-height: clamp(100px, calc(100px + 7.197vh), 157px);
   background-color: white;
 }
 
@@ -40,12 +47,8 @@ body {
   max-width: 92px;
 }
 
-.s-hdr__nav {
-  background-color: yellow;
-}
-
 .s-hdr__nav-list {
-  display: flex;
+  display: grid;
   flex-direction: column;
 }
 
@@ -63,20 +66,16 @@ body {
   border-top: 3px solid;
   border-image: linear-gradient(92.58deg, #110000 14.6%, #58b9cf 26.18%, #c67dbc 41.24%, #a6e9da 88.73%);
   border-image-slice: 1;
-  /*gradient border thingy*/
-  &::after {
-  }
+
 }
 
 .nav-link__icon {
-  // // background-color: aqua;
-  // display: inline-block;
-  height: fit-content
-  // // width: 20px;
+  height: fit-content;
 }
 
 .lang-switch {
-  position: fixed;
+  z-index: 40;
+  position: absolute;
   background-color: white;
   border-radius: 32px;
   height: 62px;
@@ -130,23 +129,72 @@ body {
   }
 }
 
-.s-main-inner {
-  display: grid;
-  grid-template-columns: 1fr 330px;
-  grid-template-rows: 1fr 128px;
-  height: 100%;
-  background: linear-gradient(180deg, #87b8b7 0%, #56877e 53.58%, #0c3e28 100%);
+
+.s-main {
+    background: linear-gradient(180deg, #87b8b7 0%, #56877e 53.58%, #0c3e28 100%);
+    display: grid;
+    grid-template-columns: minmax(auto, 800px) minmax(350px,25vw);
+    width: fit-content;
+    align-content: stretch;
 }
 
-.s-main__hd-wrp {
-  grid-column-start: 1;
-  grid-column-end: 2;
-
-  grid-row-start: 1;
-  grid-row-end: 3;
+.s-main__hero-wrp {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .s-main__bio-wrp {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.s-main__heading-wrp {
+  position: relative;
+  z-index: 20;
+  margin: 10px 5px 65px 5px;
+}
+
+.s-main-heading {
+  display: inline-flex;
+  flex-direction: column;
+}
+.s-main-heading span {
+  display: inline-block;
+  font-size: 64px;
+  letter-spacing: 0.02em;
+  line-height: 120%;
+
+  &:nth-child(1) {
+    background: linear-gradient(270deg, #ffffff 76.64%, rgba(255, 255, 255, 0) 112.77%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+
+  &:nth-child(2) {
+    background: linear-gradient(270.22deg, rgba(255, 255, 255, 0) -6.22%, #ffffff 34.88%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    margin-bottom: 5px;
+  }
+}
+
+.s-main__lead-wrp {
+  margin-left: auto;
+  font-size: 24px;
+  width: fit-content;
+}
+
+.s-main__bio-txt-wrp {
+  flex: 1;
   padding: 157px 40px 20px 40px;
   background-color: #021711;
   display: flex;
@@ -155,18 +203,20 @@ body {
   color: #99b2ab;
 
   > * {
-    line-height: 122%;
+    line-height: 123%;
     font-size: 14px;
   }
 }
 
 .s-hdr__dev-credit {
+  min-height: 87px;
   background: #021711;
   color: #99b2ab;
   font-size: 12px;
 }
 
 .s-main__cta-wrp {
+  min-height: 128px;
   background-color: white;
   color: #021711;
   display: flex;
@@ -179,4 +229,43 @@ body {
   font-size: 24px;
   width: 100%;
   background: none;
+}
+
+.s-main__hero-img-wrp {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  z-index: 10;
+  overflow: hidden;
+
+  > img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .p-img-full {
+
+  }
+
+  @keyframes eye {
+    from {
+      transform: translateX(3px) translateY(3px);
+    }
+    to {
+      transform: translateX(-3px) translateY(-2px);
+    }
+  }
+
+  .p-img-eyes{
+    transition-duration: 400ms;
+    transform: translateX(3px);
+    animation: eye 700ms alternate-reverse infinite linear;
+  }
 }
