@@ -1,5 +1,6 @@
-// Test import of styles
 import '@/styles/main.scss'
+
+import './js/intro-animation.js'
 /*
 // Test import of a JavaScript module
 import { example } from '@/js/example'

@@ -10,116 +10,128 @@
 
   <body>
     <div id="root">
-      <div class="root__inner">
-        <!-- Site Header -->
-        <header class="site-header s-hdr">
-          <div class="s-hdr__logo-wrp u-flex-center">
-            <img class="s-hdr__logo" src="./freyja-logo.svg" alt="Freyja's Work Logo" />
-          </div>
-          <!-- Language switch -->
-          <div
-            class="s-hdr__language-switch lang-switch ffam-h"
-            role="radiogroup"
-            aria-labelledby="#hdr-lang-switch"
-          >
-            <p class="visually-hidden" id="#hdr-lang-switch">Choose a language for this website</p>
-            <div class="lang-switch__option">
-              <input
-                class="lang-switch__radio-btn"
-                type="radio"
-                name="hdr-site-language"
-                id="hdr-lang-en"
-                value="en"
-                checked
-              />
-              <label class="lang-switch__option-label" for="hdr-lang-en">English</label>
-            </div>
-            <div class="lang-switch__option">
-              <input
-                class="lang-switch__radio-btn"
-                type="radio"
-                name="hdr-site-language"
-                id="hdr-lang-is"
-                value="is"
-              />
-              <label class="lang-switch__option-label" for="hdr-lang-is">Icelandic</label>
-            </div>
-          </div>
-
-          <!-- Nav links -->
-          <nav class="s-hdr__nav">
-            <ul class="s-hdr__nav-list ffam-h">
-              <li>
-                <a href="/product" class="s-hdr__nav-link">
-                  <span class="nav-link__text"> Product </span>
-                </a>
-              </li>
-              <li>
-                <a href="/fashion" class="s-hdr__nav-link">
-                  <span class="nav-link__text"> Fashion </span>
-                </a>
-              </li>
-              <li>
-                <a href="/music" class="s-hdr__nav-link">
-                  <span class="nav-link__icon u-flex-center">
-                    <img src="music.svg" alt="music icon" />
-                  </span>
-                  <span class="nav-link__text"> Music </span>
-                </a>
-              </li>
-              <li>
-                <a href="/tweets" class="s-hdr__nav-link">
-                  <span class="nav-link__icon u-flex-center">
-                    <img src="eyes.svg" alt="eyes emoji" />
-                  </span>
-                  <span class="nav-link__text"> Tweets </span>
-                </a>
-              </li>
-            </ul>
-          </nav>
-
-          <!-- Builders' reference -->
-          <div class="s-hdr__dev-credit u-flex-center">
-            <p class="s">Love from itxbo</p>
-          </div>
-        </header>
-
-        <!-- Site Main -->
-
-        <main class="site-main s-main">
-          <div class="s-main__hero-wrp">
-            <div class="s-main__hero-img-wrp">
-              <img class="p-img-eyes" src="img-potrait-eyes.png" aria-hidden="true">
-              <img class="p-img-full" src="img-potrait.png" alt="">
-            </div>
-            <div class="s-main__heading-wrp">
-              <h1 class="s-main-heading ffam-h">
-                <span>Freyja</span> <span>&nbsp;Stefánsson</span>
-              </h1>
-              <div class="s-main__lead-wrp ffam-style">
-                <p>Multidisciplinary Creative</p>
+      <div class="root__overflow-ctrl">
+        <div class="root__inner" id="display-wrp">
+          <!-- Site Header -->
+          <header class="site-header s-hdr">
+            <!-- Language switch -->
+            <div
+              class="s-hdr__language-switch lang-switch ffam-h"
+              role="radiogroup"
+              aria-labelledby="#hdr-lang-switch"
+            >
+              <p class="visually-hidden" id="#hdr-lang-switch">
+                Choose a language for this website
+              </p>
+              <div class="lang-switch__option">
+                <input
+                  class="lang-switch__radio-btn"
+                  type="radio"
+                  name="hdr-site-language"
+                  id="hdr-lang-en"
+                  value="en"
+                  checked
+                />
+                <label class="lang-switch__option-label" for="hdr-lang-en">English</label>
+              </div>
+              <div class="lang-switch__option">
+                <input
+                  class="lang-switch__radio-btn"
+                  type="radio"
+                  name="hdr-site-language"
+                  id="hdr-lang-is"
+                  value="is"
+                />
+                <label class="lang-switch__option-label" for="hdr-lang-is">Icelandic</label>
               </div>
             </div>
-          </div>
-          <div class="s-main__bio-wrp">
-            <div class="s-main__bio-txt-wrp">
-              <p>Freyja Stefánsson is an Icelandic Designer and indie pop artiste.</p>
-              <p>
-                As a multidisciplinary designer, Freyja has worked in Product Design across
-                Financial Technology and Artificial Intelligence Applications. In Fashion and
-                Graphic Art Direction with Zara, OFF-WHITE, etc
-              </p>
-              <p>
-                Award Nominee at the Icelandic Music Awards for Best Newcomer, but that's just one
-                of her various hobbies.
-              </p>
+            <div class="site-header__inner" id="site-header">
+                  <!-- logo -->
+            <div class="s-hdr__logo-wrp u-flex-center" id="header-logo">
+              <img
+                class="s-hdr__logo"
+                src="./freyja-logo.svg"
+                alt="Freyja's Work Logo"
+              />
             </div>
 
-            <div class="s-main__cta-wrp">
-              <button class="s-main__cta-btn ffam-h">Let's Chat?</button>
+            <!-- Nav links -->
+            <nav class="s-hdr__nav">
+              <ul class="s-hdr__nav-list ffam-h">
+                <li>
+                  <a href="/product" class="s-hdr__nav-link">
+                    <span class="nav-link__text"> Product </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/fashion" class="s-hdr__nav-link">
+                    <span class="nav-link__text"> Fashion </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/music" class="s-hdr__nav-link">
+                    <span class="nav-link__icon u-flex-center">
+                      <img src="music.svg" alt="music icon" />
+                    </span>
+                    <span class="nav-link__text"> Music </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/tweets" class="s-hdr__nav-link">
+                    <span class="nav-link__icon u-flex-center">
+                      <img src="eyes.svg" alt="eyes emoji" />
+                    </span>
+                    <span class="nav-link__text"> Tweets </span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+
+            <!-- Builders' reference -->
+            <div class="s-hdr__dev-credit u-flex-center" id="credit-area">
+              <p class="s">Love from itxbo & Adavize</p>
             </div>
-          </div>
-        </main>
+            </div>
+          </header>
+
+          <!-- Site Main -->
+
+          <main class="site-main s-main">
+            <div class="s-main__hero-wrp">
+              <div class="s-main__hero-img-wrp">
+                <img class="p-img-eyes" src="img-potrait-eyes.png" aria-hidden="true" />
+                <img class="p-img-full" src="img-potrait.png" alt="" />
+              </div>
+              <div class="s-main__heading-wrp">
+                <h1 class="s-main-heading ffam-h" id="intro-heading">
+                  <span class="anim-wrp"><span class="line">Freyja</span></span>
+                  <span class="anim-wrp"><span class="line">&nbsp;Stefánsson</span></span>
+                </h1>
+                <div class="s-main__lead-wrp ffam-style" id="intro-sub">
+                  <p>Multidisciplinary Creative</p>
+                </div>
+              </div>
+            </div>
+            <div class="s-main__bio-wrp">
+              <div class="s-main__bio-txt-wrp">
+                <p>Freyja Stefánsson is an Icelandic Designer and indie pop artiste.</p>
+                <p>
+                  As a multidisciplinary designer, Freyja has worked in Product Design across
+                  Financial Technology and Artificial Intelligence Applications. In Fashion and
+                  Graphic Art Direction with Zara, OFF-WHITE, etc
+                </p>
+                <p>
+                  Award Nominee at the Icelandic Music Awards for Best Newcomer, but that's just one
+                  of her various hobbies.
+                </p>
+              </div>
+
+              <div class="s-main__cta-wrp" id="chat-cta">
+                <button class="s-main__cta-btn ffam-h">Let's Chat?</button>
+              </div>
+            </div>
+          </main>
+        </div>
       </div>
     </div>
   </body>
