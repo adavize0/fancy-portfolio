@@ -22,6 +22,7 @@ body {
   width: fit-content;
   height: fit-content;
   overflow: hidden;
+  position: relative;
 }
 
 .root__inner {
@@ -31,9 +32,19 @@ body {
   max-height: 1000px;
   width: fit-content;
   display: grid;
-  grid-template-columns: minmax(350px, 25vw) 1fr;
-  transform-origin: 40% 40%;
+  grid-template-columns: minmax(350px, 22vw) 1fr;
+  transform-origin: 36% 52%;
 }
+
+.root--loading .root__inner {
+  & > * {
+    visibility: hidden;
+  }
+  
+  .p-img {
+    visibility: visible;
+  }
+} 
 
 .s-hdr {
   flex-grow: 0.45;
@@ -85,12 +96,13 @@ body {
 }
 
 .lang-switch {
-  z-index: 40;
+  z-index: 510;
   position: absolute;
   background-color: white;
   border-radius: 32px;
   height: 62px;
   width: fit-content;
+  visibility: hidden;
 
   top: 48px;
   left: 50%;
@@ -145,7 +157,7 @@ body {
   display: grid;
   grid-template-columns: minmax(auto, 800px) minmax(350px, 25vw);
   width: fit-content;
-  align-content: stretch;
+  align-content: stretch;  
 }
 
 .s-main__hero-wrp {
@@ -271,17 +283,56 @@ body {
   .p-img-full {
   }
 
-  // @keyframes eye {
-  //   from {
-  //     transform: translateX(3px) translateY(3px);
-  //   }
-  //   to {
-  //     transform: translateX(-3px) translateY(-2px);
-  //   }
-  // }
 
   .p-img-eyes {
     transition-duration: 400ms;
     // animation: eye 700ms alternate-reverse infinite linear;
   }
+}
+
+
+.loader-display {
+  // background-color: red;
+  // background: linear-gradient(180deg, #87b8b7 0%, #56877e 53.58%, #0c3e28 100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 500;
+
+  .loader-filter {
+    --webkit-backdrop-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    backdrop-filter: grayscale(100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition-timing-function: cubic-bezier(0.75, 0, 0.25, 1);
+  }
+}
+
+.progress-bar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 100%;
+  max-width: 235px;
+  overflow: hidden;
+  border-radius: 32px;
+  height: 62px;
+
+  &.finished {
+    top: 48px;
+    transform: translateX(-50%);
+  }
+}
+
+.progress-bar__inner {
+  width: 0%;
+  height: 100%;
+  background-color: white;
+  transition: 1.5s width cubic-bezier(0.75, 0, 0.25, 1);
 }

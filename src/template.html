@@ -9,16 +9,23 @@
   </head>
 
   <body>
-    <div id="root">
+    <div id="root" class="root--loading">
       <div class="root__overflow-ctrl">
-        <div class="root__inner" id="display-wrp">
-          <!-- Site Header -->
+        <div class="loader-display" id="loader-display">
+          <h1 class="visually-hidden">Loading page</h1>
+          <div class="loader-filter"></div>
+          <div class="progress-bar" role="presentation">
+            <div class="progress-bar__inner" id="progress-indicator"></div>
+          </div>
+        </div>
+        <div class="root__inner" id="display-wrp" aria-hidden="true">
           <header class="site-header s-hdr">
             <!-- Language switch -->
             <div
               class="s-hdr__language-switch lang-switch ffam-h"
               role="radiogroup"
               aria-labelledby="#hdr-lang-switch"
+              id="lang-switch-wrp"
             >
               <p class="visually-hidden" id="#hdr-lang-switch">
                 Choose a language for this website
@@ -99,8 +106,8 @@
           <main class="site-main s-main">
             <div class="s-main__hero-wrp">
               <div class="s-main__hero-img-wrp">
-                <img class="p-img-eyes" src="img-potrait-eyes.png" aria-hidden="true" />
-                <img class="p-img-full" src="img-potrait.png" alt="" />
+                <img class="p-img p-img-eyes" src="img-potrait-eyes.png" aria-hidden="true" />
+                <img class="p-img p-img-full" src="img-potrait.png" alt="" />
               </div>
               <div class="s-main__heading-wrp">
                 <h1 class="s-main-heading ffam-h" id="intro-heading">
